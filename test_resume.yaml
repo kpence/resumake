@@ -73,6 +73,13 @@ projects:
       - ANTLR
       - LLVM
     description: Compiles stuff
+  - name: Linker
+    skills: 
+      - Java
+      - Bison
+      - GCC
+    url: "https://example.com"
+    description: Links stuff
   - name: Discord bot
     skills:
       - Python

@@ -54,8 +54,15 @@ func TestResumeDeserialization(t *testing.T) {
 		Projects: []resume.Project{
 			{
 				Name:        "Compiler",
+				Url:         "",
 				Description: "Compiles stuff",
 				Skills:      resume.Skills{"C#", "ANTLR", "LLVM"},
+			},
+			{
+				Name:        "Linker",
+				Url:         "https://example.com",
+				Description: "Links stuff",
+				Skills:      resume.Skills{"Java", "Bison", "GCC"},
 			},
 		},
 	}
@@ -110,4 +117,11 @@ projects:
       - C#
       - ANTLR
       - LLVM
-    description: Compiles stuff`)
+    description: Compiles stuff
+  - name: Linker
+    url: 'https://example.com'
+    skills: 
+      - Java
+      - Bison
+      - GCC
+    description: Links stuff`)

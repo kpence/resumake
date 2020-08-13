@@ -145,6 +145,11 @@ B.S. in Computer Science
 Compiles stuff \\
 \vspace*{2mm}
 
+{\textbf{Linker}} \textit{Java, Bison, GCC} \\
+\textit{https://example.com} \\
+Links stuff \\
+\vspace*{2mm}
+
 {\textbf{Gameboy Emulator}} \textit{C++} \\
 Emulates stuff \\
 \vspace*{2mm}

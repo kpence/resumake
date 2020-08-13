@@ -86,6 +86,12 @@ var testResume = resume.Resume{
 			Skills:      resume.Skills{"C#", "ANTLR", "LLVM"},
 		},
 		{
+			Name:        "Linker",
+			Url:         "https://example.com",
+			Description: "Links stuff",
+			Skills:      resume.Skills{"Java", "Bison", "GCC"},
+		},
+		{
 			Name:        "Gameboy Emulator",
 			Description: "Emulates stuff",
 			Skills:      resume.Skills{"C++"},
