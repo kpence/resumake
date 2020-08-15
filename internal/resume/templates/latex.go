@@ -125,8 +125,11 @@ var latexDocument = `
 \header{Projects}
 \vspace{1mm}
 [[- range $project := .Projects ]]
-{\textbf{[[ $project.Name | escape | censor]]}} \textit{[[ $project.Skills.Display | escape | censor]]} \\
+{\textbf{[[ $project.Name | escape | censor]]}}\\
+\vspace{0.75mm}
+[[ if $project.Skills ]]\textit{[[ $project.Skills.Display | escape | censor]]} \\[[ "\n" ]][[ end -]]
 [[ if $project.Url ]]\textit{[[ $project.Url | censor]]} \\[[ "\n" ]][[ end -]]
+\vspace{0.75mm}
 [[ $project.Description | censor]] \\
 \vspace*{2mm}
 [[ end ]]

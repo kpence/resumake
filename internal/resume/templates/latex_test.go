@@ -141,16 +141,25 @@ B.S. in Computer Science
 %==== Projects ====%
 \header{Projects}
 \vspace{1mm}
-{\textbf{Compiler}} \textit{C\#, ANTLR, LLVM} \\
+{\textbf{Compiler}}\\
+\vspace{0.75mm}
+\textit{C\#, ANTLR, LLVM} \\
+\vspace{0.75mm}
 Compiles stuff \\
 \vspace*{2mm}
 
-{\textbf{Linker}} \textit{Java, Bison, GCC} \\
+{\textbf{Linker}}\\
+\vspace{0.75mm}
+\textit{Java, Bison, GCC} \\
 \textit{https://example.com} \\
+\vspace{0.75mm}
 Links stuff \\
 \vspace*{2mm}
 
-{\textbf{Gameboy Emulator}} \textit{C++} \\
+{\textbf{Gameboy Emulator}}\\
+\vspace{0.75mm}
+\textit{C++} \\
+\vspace{0.75mm}
 Emulates stuff \\
 \vspace*{2mm}
 
