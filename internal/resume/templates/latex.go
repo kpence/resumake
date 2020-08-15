@@ -129,8 +129,16 @@ var latexDocument = `
 \vspace{0.75mm}
 [[ if $project.Skills ]]\textit{[[ $project.Skills.Display | escape | censor]]} \\[[ "\n" ]][[ end -]]
 [[ if $project.Url ]]\textit{[[ $project.Url | censor]]} \\[[ "\n" ]][[ end -]]
-\vspace{0.75mm}
-[[ $project.Description | censor]] \\
+[[ if $project.Description ]]\vspace{0.75mm}[[ "\n" ]][[ $project.Description | censor]] \\[[ "\n" ]][[ end -]]
+[[- if $project.Bullets ]]
+\vspace{-2.25mm}
+\begin{itemize}[leftmargin=10pt] \itemsep -1pt
+[[- range $bullet := $project.Bullets ]]
+    \item [[ $bullet | escape | censor]] 
+[[- end ]]
+\vspace{-2.25mm}
+\end{itemize}
+[[ end -]]
 \vspace*{2mm}
 [[ end ]]
 \end{document}

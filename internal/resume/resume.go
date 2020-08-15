@@ -38,10 +38,11 @@ type JobEntry struct {
 }
 
 type Project struct {
-	Name        string `yaml:"name"`
-	Url         string `yaml:"url"`
-	Description string `yaml:"description"`
-	Skills      Skills `yaml:"skills"`
+	Name        string   `yaml:"name"`
+	Description string   `yaml:"description"`
+	Url         string   `yaml:"url"`
+	Bullets     []string `yaml:"bullets"`
+	Skills      Skills   `yaml:"skills"`
 }
 
 type Skills []string

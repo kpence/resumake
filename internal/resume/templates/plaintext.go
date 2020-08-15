@@ -68,6 +68,9 @@ PROJECTS
 {{- range $project := .Projects }}
 {{ $project.Name | censor }}
 {{- if $project.Url }}{{ "\n" }}{{ $project.Url | censor }}{{- end }}
-{{ $project.Description | censor }}
+{{- if $project.Description }}{{ "\n" }}{{ $project.Description | censor }}{{- end }}
+{{- range $bullet := $project.Bullets }}
+* {{ $bullet | censor }} 
+{{- end }}
 Technologies used: {{ $project.Skills.Display | censor }}{{ "\n" }}
 {{- end }}`
