@@ -41,6 +41,7 @@ func TestResumeDeserialization(t *testing.T) {
 			Title:    "Senior Software Engineer",
 			Employer: "Microsoft",
 			Skills:   resume.Skills{"C#", "C++"},
+			Description: "",
 			Bullets:  []string{"did a thing", "did another thing"},
 			Location: "Seattle, WA",
 			TimeSpan: resume.TimeSpan{

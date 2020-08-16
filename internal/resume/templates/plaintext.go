@@ -57,6 +57,7 @@ PROFESSIONAL EXPERIENCE
 * {{ $bullet | censor }} 
 {{- end }}
 {{ if $jobEntry.Skills }}Technologies used: {{ $jobEntry.Skills.Display | censor }}{{ "\n" }}{{ end }}
+{{- if $jobEntry.Description }}{{ "\n" }}{{ $jobEntry.Description | censor }}{{- end }}
 {{- end }}
 SKILLS
 ==============================

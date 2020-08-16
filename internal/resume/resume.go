@@ -29,12 +29,13 @@ type EducationEntry struct {
 }
 
 type JobEntry struct {
-	Title    string   `yaml:"title"`
-	Employer string   `yaml:"employer"`
-	Skills   Skills   `yaml:"skills"`
-	Bullets  []string `yaml:"bullets"`
-	Location string   `yaml:"location"`
-	TimeSpan TimeSpan `yaml:"timespan"`
+	Title       string   `yaml:"title"`
+	Employer    string   `yaml:"employer"`
+	Skills      Skills   `yaml:"skills"`
+	Description string   `yaml:"description"`
+	Bullets     []string `yaml:"bullets"`
+	Location    string   `yaml:"location"`
+	TimeSpan    TimeSpan `yaml:"timespan"`
 }
 
 type Project struct {
