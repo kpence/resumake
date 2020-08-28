@@ -89,10 +89,20 @@ func (t *TimeSpan) UnmarshalYAML(unmarshal func(interface{}) error) error {
 
 		t.TimeSpanVariant = UnboundedSpan{StartDate: start}
 	} else {
-		season := data["season"].(string)
-		year := data["year"].(int)
+		season, hasSeason := data["season"].(string)
+		year, hasYear := data["year"].(int)
 
-		t.TimeSpanVariant = SeasonSpan{Season: season, Year: year}
+		if hasSeason && hasYear {
+			t.TimeSpanVariant = SeasonSpan{Season: season, Year: year}
+		} else {
+			expectedDate := data["expectedDate"].(string)
+			expected, err := time.Parse("01/2006", expectedDate)
+			if err != nil {
+				return err
+			}
+
+			t.TimeSpanVariant = ExpectedDateSpan{ExpectedDate: expected}
+		}
 	}
 
 	return nil
@@ -109,6 +119,15 @@ type SeasonSpan struct {
 
 func (s SeasonSpan) Display() string {
 	return fmt.Sprintf("%v %v", s.Season, s.Year)
+}
+
+type ExpectedDateSpan struct {
+	ExpectedDate time.Time
+}
+
+func (e ExpectedDateSpan) Display() string {
+	year, month, _ := e.ExpectedDate.Date()
+	return fmt.Sprintf("Expected %v", formatMonthYear(month, year))
 }
 
 type UnboundedSpan struct {
