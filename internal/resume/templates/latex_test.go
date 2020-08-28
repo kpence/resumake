@@ -58,7 +58,7 @@ var latexResume = `
 \StopCensoring
 
 %==== Profile ====%
-\vspace*{-25pt}
+\vspace*{-10pt}
 \begin{center}
     {\Huge JOHN SMITH}\\
     john.smith@gmail.com\\

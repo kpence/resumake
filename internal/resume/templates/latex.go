@@ -68,7 +68,7 @@ var latexDocument = `
 [[ if not .CensoringEnabled ]]\StopCensoring[[ end ]]
 
 %==== Profile ====%
-\vspace*{-25pt}
+\vspace*{-10pt}
 \begin{center}
     {\Huge [[ .Header.Name | toUpper | censor ]]}\\
     [[ .Header.Email | censor]]\\
