@@ -27,9 +27,10 @@ func TestResumeDeserialization(t *testing.T) {
 			Email: "john.smith@gmail.com",
 		},
 		EducationEntries: []resume.EducationEntry{{
-			School: "University of Philadelphia",
-			Degree: "B.S. in Computer Science",
-			GPA:    "3.45",
+			School:   "University of Philadelphia",
+			Location: "Philadelphia, PA",
+			Degree:   "B.S. in Computer Science",
+			GPA:      "3.45",
 			TimeSpan: resume.TimeSpan{
 				TimeSpanVariant: resume.BoundedSpan{
 					StartDate: expectedTime,
@@ -38,12 +39,12 @@ func TestResumeDeserialization(t *testing.T) {
 			},
 		}},
 		JobEntries: []resume.JobEntry{{
-			Title:    "Senior Software Engineer",
-			Employer: "Microsoft",
-			Skills:   resume.Skills{"C#", "C++"},
+			Title:       "Senior Software Engineer",
+			Employer:    "Microsoft",
+			Skills:      resume.Skills{"C#", "C++"},
 			Description: "",
-			Bullets:  []string{"did a thing", "did another thing"},
-			Location: "Seattle, WA",
+			Bullets:     []string{"did a thing", "did another thing"},
+			Location:    "Seattle, WA",
 			TimeSpan: resume.TimeSpan{
 				TimeSpanVariant: resume.UnboundedSpan{
 					StartDate: expectedTime,
@@ -87,6 +88,7 @@ header:
 education:
   - school: University of Philadelphia
     degree: B.S. in Computer Science
+    location: Philadelphia, PA
     gpa: 3.45
     timespan:
       start: 01/2004

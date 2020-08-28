@@ -41,7 +41,7 @@ var latexDocument = `
     \usepackage{enumitem}
     \usepackage[utf8]{inputenc}
     \usepackage[T1]{fontenc}
-    \usepackage[margin=1in]{geometry}
+    \usepackage[margin=0.75in]{geometry}
     \textheight=10in
     \pagestyle{empty}
     \raggedright
@@ -68,7 +68,7 @@ var latexDocument = `
 [[ if not .CensoringEnabled ]]\StopCensoring[[ end ]]
 
 %==== Profile ====%
-\vspace*{-10pt}
+\vspace*{-25pt}
 \begin{center}
     {\Huge [[ .Header.Name | toUpper | censor ]]}\\
     [[ .Header.Email | censor]]\\
@@ -81,7 +81,7 @@ var latexDocument = `
 \header{Education}
 [[ range $eduEntry := .EducationEntries ]]
 \textbf{[[ $eduEntry.School | escape | censor]]}
-\hfill\\
+\hfill[[ if $eduEntry.Location ]][[ $eduEntry.Location | censor]][[ end -]]\\
 [[ $eduEntry.Degree | censor]][[- if $eduEntry.GPA ]] \textit{GPA: [[ $eduEntry.GPA | censor]]}[[ end ]]
 \hfill [[ $eduEntry.TimeSpan.Display | censor]]\\
 \vspace{2mm}
@@ -110,17 +110,6 @@ var latexDocument = `
 
 
 
-%==== Skills ====%
-\header{Skills}
-\vspace{1mm}
-\begin{tabular}{ l l }
-    Languages:    & [[ .Languages.Display | escape | censor]] \\
-    Technologies: & [[ .Technologies.Display | escape | censor]] \\
-\end{tabular}
-\vspace{2mm}
-
-
-
 
 %==== Projects ====%
 \header{Projects}
@@ -142,5 +131,17 @@ var latexDocument = `
 [[ end -]]
 \vspace*{2mm}
 [[ end ]]
+
+
+
+
+%==== Skills ====%
+\header{Skills}
+\vspace{1mm}
+\begin{tabular}{ l l }
+    Languages:    & [[ .Languages.Display | escape | censor]] \\
+    Technologies: & [[ .Technologies.Display | escape | censor]] \\
+\end{tabular}
+\vspace{2mm}
 \end{document}
 `

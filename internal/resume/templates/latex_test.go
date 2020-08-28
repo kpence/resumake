@@ -31,7 +31,7 @@ var latexResume = `
     \usepackage{enumitem}
     \usepackage[utf8]{inputenc}
     \usepackage[T1]{fontenc}
-    \usepackage[margin=1in]{geometry}
+    \usepackage[margin=0.75in]{geometry}
     \textheight=10in
     \pagestyle{empty}
     \raggedright
@@ -58,7 +58,7 @@ var latexResume = `
 \StopCensoring
 
 %==== Profile ====%
-\vspace*{-10pt}
+\vspace*{-25pt}
 \begin{center}
     {\Huge JOHN SMITH}\\
     john.smith@gmail.com\\
@@ -126,17 +126,6 @@ B.S. in Computer Science
 
 
 
-%==== Skills ====%
-\header{Skills}
-\vspace{1mm}
-\begin{tabular}{ l l }
-    Languages:    & C++, Java, C\# \\
-    Technologies: & git, Docker \\
-\end{tabular}
-\vspace{2mm}
-
-
-
 
 %==== Projects ====%
 \header{Projects}
@@ -163,5 +152,17 @@ Links stuff \\
 Emulates stuff \\
 \vspace*{2mm}
 
+
+
+
+
+%==== Skills ====%
+\header{Skills}
+\vspace{1mm}
+\begin{tabular}{ l l }
+    Languages:    & C++, Java, C\# \\
+    Technologies: & git, Docker \\
+\end{tabular}
+\vspace{2mm}
 \end{document}
 `

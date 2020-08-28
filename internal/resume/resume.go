@@ -25,6 +25,7 @@ type EducationEntry struct {
 	School   string   `yaml:"school"`
 	Degree   string   `yaml:"degree"`
 	GPA      string   `yaml:"gpa"`
+	Location string   `yaml:"location"`
 	TimeSpan TimeSpan `yaml:"timespan"`
 }
 
