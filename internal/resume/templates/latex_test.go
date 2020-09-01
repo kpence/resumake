@@ -6,14 +6,15 @@ import (
 
 	. "github.com/onsi/gomega"
 
-	"resumake/internal/resume/templates"
+	"github.com/karimElmougi/resumake/internal/resume/templates"
 )
 
 func TestWholeLatexTemplate(t *testing.T) {
 	g := NewGomegaWithT(t)
 
-	g.Expect(func() { templates.Latex() }).ToNot(Panic())
-	tmpl := templates.Latex()
+	censor := false
+	g.Expect(func() { templates.Latex(&censor) }).ToNot(Panic())
+	tmpl := templates.Latex(&censor)
 
 	b := &strings.Builder{}
 	err := tmpl.Execute(b, testResume)
@@ -56,7 +57,6 @@ var latexResume = `
 \vspace*{-40pt}
 
 \sffamily
-\StopCensoring
 
 %==== Profile ====%
 \vspace*{-10pt}
@@ -75,13 +75,13 @@ var latexResume = `
 \header{Education}
 
 \textbf{Georgia Institute of Technology}
-\hfill\\
+\hfill \\
 M.S. in Computer Science \textit{GPA: 3.9}
 \hfill Jan. 2004 - Current\\
 \vspace{2mm}
 
 \textbf{University of Philadelphia}
-\hfill\\
+\hfill \\
 B.S. in Computer Science
 \hfill Jan. 2004 - Dec. 2006\\
 \vspace{2mm}
