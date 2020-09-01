@@ -36,6 +36,7 @@ var latexResume = `
     \pagestyle{empty}
     \raggedright
     \usepackage{censor}
+    \usepackage{fontawesome}
 
 %%%%%%%%%%%%%%%%%%%%%%% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -61,13 +62,16 @@ var latexResume = `
 \vspace*{-10pt}
 \begin{center}
     {\Huge JOHN SMITH}\\
-    john.smith@gmail.com\\
+    \vspace{2.5pt}
+    \faEnvelope \ john.smith@gmail.com
+    \\
 \end{center}
 
 
 
 
 %==== Education ====%
+\vspace{-5pt}
 \header{Education}
 
 \textbf{Georgia Institute of Technology}

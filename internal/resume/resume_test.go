@@ -23,8 +23,11 @@ func TestResumeDeserialization(t *testing.T) {
 	expected := resume.Resume{
 		CensoringEnabled: false,
 		Header: resume.Header{
-			Name:  "John Smith",
-			Email: "john.smith@gmail.com",
+			Name:     "John Smith",
+			Email:    "john.smith@gmail.com",
+			Phone:    "",
+			Linkedin: "",
+			Github:   "",
 		},
 		EducationEntries: []resume.EducationEntry{{
 			School:   "University of Philadelphia",

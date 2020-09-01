@@ -46,6 +46,7 @@ var latexDocument = `
     \pagestyle{empty}
     \raggedright
     \usepackage{censor}
+    \usepackage{fontawesome}
 
 %%%%%%%%%%%%%%%%%%%%%%% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -71,13 +72,18 @@ var latexDocument = `
 \vspace*{-10pt}
 \begin{center}
     {\Huge [[ .Header.Name | toUpper | censor ]]}\\
-    [[ .Header.Email | censor]]\\
+    \vspace{2.5pt}
+    \faEnvelope \ [[ .Header.Email | censor ]]
+    [[ if .Header.Phone ]] $|$ \faPhone \ [[ .Header.Phone | censor ]][[ end -]]
+    [[ if .Header.Linkedin ]] $|$ \faLinkedinSquare \ [[ .Header.Linkedin | censor ]][[ end -]]
+    [[ if .Header.Github ]] $|$ \faGithub \ [[ .Header.Github | censor ]][[ end -]]\\
 \end{center}
 
 
 
 
 %==== Education ====%
+\vspace{-5pt}
 \header{Education}
 [[ range $eduEntry := .EducationEntries ]]
 \textbf{[[ $eduEntry.School | escape | censor]]}
