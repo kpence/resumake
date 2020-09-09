@@ -37,7 +37,9 @@ EDUCATION
 ==============================
 {{- range $eduEntry := .EducationEntries }}
 {{ $eduEntry.Degree | censor }}, {{ $eduEntry.School | censor }}, {{ $eduEntry.TimeSpan.Display | censor }}
-{{ if $eduEntry.GPA }}GPA: {{ $eduEntry.GPA | censor }}{{ "\n" }}{{ end }}
+{{ if (and $eduEntry.GPA (not $eduEntry.MajorGPA)) }}GPA: {{ $eduEntry.GPA | censor }}{{ "\n" }}{{ end }}
+{{- if (and $eduEntry.GPA $eduEntry.MajorGPA) }}Cumulative GPA: {{ $eduEntry.GPA | censor }}{{ "\n" }}{{ end }}
+{{- if $eduEntry.MajorGPA }}Major GPA: {{ $eduEntry.MajorGPA | censor }}{{ "\n" }}{{ end }}
 {{- end }}
 PROFESSIONAL EXPERIENCE
 ===============================

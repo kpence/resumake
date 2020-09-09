@@ -97,8 +97,10 @@ var latexDocument = `
 [[ range $eduEntry := .EducationEntries ]]
 \textbf{[[ $eduEntry.School | escape | censor]]}
 \hfill [[ if $eduEntry.Location ]][[ $eduEntry.Location | censor]][[ end -]]\\
-[[ $eduEntry.Degree | censor]][[- if $eduEntry.GPA ]] \textit{GPA: [[ $eduEntry.GPA | censor]]}[[ end ]]
+[[ $eduEntry.Degree | censor]][[- if (and $eduEntry.GPA (not $eduEntry.MajorGPA)) ]] \textit{GPA: [[ $eduEntry.GPA | censor]]}[[ end ]]
 \hfill [[ $eduEntry.TimeSpan.Display | censor]]\\
+[[- if (and $eduEntry.MajorGPA (not $eduEntry.GPA)) ]] \textit{Major GPA: [[ $eduEntry.MajorGPA | censor]]}\\[[ end ]]
+[[- if (and $eduEntry.MajorGPA $eduEntry.GPA) ]] \textit{Major GPA: [[ $eduEntry.MajorGPA | censor]]} | \textit{Cumulative GPA: [[ $eduEntry.GPA | censor]]}\\[[ end ]]
 \vspace{2mm}
 [[ end ]]
 

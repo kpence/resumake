@@ -34,6 +34,7 @@ func TestResumeDeserialization(t *testing.T) {
 			Location: "Philadelphia, PA",
 			Degree:   "B.S. in Computer Science",
 			GPA:      "3.45",
+			MajorGPA: "",
 			TimeSpan: resume.TimeSpan{
 				TimeSpanVariant: resume.BoundedSpan{
 					StartDate: expectedTime,
