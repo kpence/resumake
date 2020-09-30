@@ -38,6 +38,8 @@ var latexResume = `
     \raggedright
     \usepackage{censor}
     \usepackage{fontawesome}
+    \usepackage{helvet}
+
 
 %%%%%%%%%%%%%%%%%%%%%%% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -89,6 +91,17 @@ B.S. in Computer Science
 
 
 
+%==== Skills ====%
+\header{Skills}
+\vspace{1mm}
+\begin{tabular}{ l l }
+    Languages:    & C++, Java, C\# \\
+    Technologies: & git, Docker \\
+\end{tabular}
+\vspace{2mm}
+
+
+
 
 %==== Experience ====%
 \header{Experience}
@@ -130,7 +143,6 @@ B.S. in Computer Science
 
 
 
-
 %==== Projects ====%
 \header{Projects}
 \vspace{1mm}
@@ -156,17 +168,5 @@ Links stuff \\
 Emulates stuff \\
 \vspace*{2mm}
 
-
-
-
-
-%==== Skills ====%
-\header{Skills}
-\vspace{1mm}
-\begin{tabular}{ l l }
-    Languages:    & C++, Java, C\# \\
-    Technologies: & git, Docker \\
-\end{tabular}
-\vspace{2mm}
 \end{document}
 `

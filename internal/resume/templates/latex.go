@@ -57,6 +57,8 @@ var latexDocument = `
     \raggedright
     \usepackage{censor}
     \usepackage{fontawesome}
+    \usepackage{helvet}
+
 
 %%%%%%%%%%%%%%%%%%%%%%% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -106,6 +108,17 @@ var latexDocument = `
 
 
 
+%==== Skills ====%
+\header{Skills}
+\vspace{1mm}
+\begin{tabular}{ l l }
+    Languages:    & [[ .Languages.Display | escape | censor]] \\
+    Technologies: & [[ .Technologies.Display | escape | censor]] \\
+\end{tabular}
+\vspace{2mm}
+
+
+
 
 %==== Experience ====%
 \header{Experience}
@@ -124,7 +137,6 @@ var latexDocument = `
 [[- end ]]
 \end{itemize}
 [[ end ]]
-
 
 
 
@@ -148,17 +160,5 @@ var latexDocument = `
 [[ end -]]
 \vspace*{2mm}
 [[ end ]]
-
-
-
-
-%==== Skills ====%
-\header{Skills}
-\vspace{1mm}
-\begin{tabular}{ l l }
-    Languages:    & [[ .Languages.Display | escape | censor]] \\
-    Technologies: & [[ .Technologies.Display | escape | censor]] \\
-\end{tabular}
-\vspace{2mm}
 \end{document}
 `
